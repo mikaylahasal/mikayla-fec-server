@@ -14,3 +14,7 @@ const instructorSchema = new mongoose.Schema({
   numOfCourses: Number,
   courseIcon: String
 });
+
+const Instructor = mongoose.model('Instructor', instructorSchema);
+
+module.exports = Instructor;
