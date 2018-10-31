@@ -1,20 +1,6 @@
 const mongoose = require('mongoose');
-const db = require('./index.js');
-mongoose.Promise = global.Promise;
+const mongoUri = 'mongodb://localhost:27017/instructors';
 
-const instructorSchema = new mongoose.Schema({
-  imageUrl: String,
-  name: String,
-  headline: String,
-  body: String,
-  rating: Number,
-  ratingIcon: String,
-  numofstudents: Number,
-  studentsIcon: String,
-  numOfCourses: Number,
-  courseIcon: String
-});
+const db = mongoose.connect(mongoUri);
 
-const Instructor = mongoose.model('Instructor', instructorSchema);
-
-module.exports = Instructor;
+module.exports = db;

@@ -1,25 +1,20 @@
 var faker = require('faker');
 const db = require('./index.js');
 
-const instructorList = [
-  {
-    imageUrl: faker.image.people();,
-    name: faker.fake("{{name.lastName}}, {{name.firstName}}"),
-    headline: faker.lorem.sentence(),
-    body: faker.lorem.paragraph(),
-    rating: faker.random.number(),
-    ratingIcon: ,
-    numofstudents: faker.random.number(),
-    studentsIcon: String,
-    numOfCourses: faker.random.number(),
-    courseIcon: String
-  }
-];
-
-
+for (let i = 1; i <= 100; i++) {
+  let instructorList = {};
+  instructorList.imageUrl: faker.image.avatar();,
+  instructorList.name: faker.fake("{{name.lastName}}, {{name.firstName}}"),
+  instructorList.headline: faker.lorem.sentence(),
+  instructorList.body: faker.lorem.paragraph(),
+  instructorList.reviews: faker.random.number(),
+  instructorList.rating: Math.floor(Math.random() * 5) + 1,
+  instructorList.numOfStudents: faker.random.number(),
+  instructorList.numOfCourses: Math.floor(Math.random() * 30) + 1
+};
 
 const sendInstructorList = function() {
-  Blog.create(instructorList)
+  Instructors.create(instructorList)
     .then(() => db.disconnect());
 };
 
