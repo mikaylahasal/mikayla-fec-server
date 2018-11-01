@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const Instructors = require('../database/index.js');
+const Instructors = require('../database/dbInstructor.js');
 
 const app = express();
 const port = 3332;
@@ -9,11 +9,18 @@ const port = 3332;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(express.static(__dirname + '/../'))
+app.use(express.static(__dirname + '/../public'))
 
-app.get("/", (req, res) => {
- res.send("Hello World");
-});
+app.get("/instructors", (req, res) => {
+
+  Instructors.findOne({})
+  .exec(function (err, result) {
+    if (err) {
+      console.log('Error')
+    }
+    res.status(200).send(JSON.stringify(result))
+  })
+})
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
