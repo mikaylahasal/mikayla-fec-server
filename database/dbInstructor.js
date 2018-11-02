@@ -7,6 +7,7 @@ const instructorSchema = new mongoose.Schema({
   name: String,
   headline: String,
   body: String,
+  reviewsIcon: String,
   reviews: Number,
   rating: Number,
   ratingIcon: String,
