@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(__dirname + '/../public'))
 
-app.get("/instructors", (req, res) => {
+app.get("/Instructors", (req, res) => {
   Instructors.count().exec(function (err, count) {
   var random = Math.floor(Math.random() * count)
 
