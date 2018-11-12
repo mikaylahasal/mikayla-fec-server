@@ -1,0 +1,17 @@
+version: '3'
+services:
+  instructor:
+    container_name: instructor-server
+    restart: always
+    build: .
+    ports:
+      - '3332:3332'
+    links:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mikayla:bball03@ds147265.mlab.com:47265/instructors
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
