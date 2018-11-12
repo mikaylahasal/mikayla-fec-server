@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoUri = 'mongodb://mongo:27017/instructors';
+const mongoUri = process.env.MONGO_URI;
 
 const db = mongoose.connect(mongoUri);
 

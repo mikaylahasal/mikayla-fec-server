@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
+
 const instructorSchema = new mongoose.Schema({
   courseId: Number,
   imageUrl: String,
@@ -18,6 +19,6 @@ const instructorSchema = new mongoose.Schema({
   courseIcon: String
 });
 
-const Instructor = mongoose.model('Instructor', instructorSchema);
+const Instructor = mongoose.model('instructors', instructorSchema);
 
 module.exports = Instructor;
