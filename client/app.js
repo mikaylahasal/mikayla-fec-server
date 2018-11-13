@@ -14,7 +14,7 @@ class App extends React.Component {
 
   componentDidMount() {
 
-    fetch("http://68.183.60.166:3332/instructors")
+    fetch("http://localhost:3000/instructors")
       .then(res => res.json())
       .then(
         (result) => {
