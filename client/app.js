@@ -13,7 +13,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-
     fetch("http://localhost:3000/instructors")
       .then(res => res.json())
       .then(
@@ -34,7 +33,6 @@ class App extends React.Component {
       )
   }
 
-
   render() {
     if (this.state.instructor) {
     return (
@@ -42,11 +40,11 @@ class App extends React.Component {
         <Instructor instructor={this.state.instructor}/>
       </div>
       )
-   } else {
-    return (
-      <div> Loading... </div>
+    } else {
+      return (
+        <div> Loading... </div>
       )
-   }
+    }
   }
 }
 
